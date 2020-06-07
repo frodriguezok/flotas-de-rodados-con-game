@@ -1,0 +1,21 @@
+import dependencia.*
+import otrosRodados.*
+import pedidos.*
+
+test "parte 2" {
+	const pedido1 = new Pedidos()
+	const cachito = new ChevroletCorsa()
+	cachito.indicarColor("rojo")
+	pedido1.distancia(960)
+	pedido1.tiempoMaximo(8)
+	pedido1.velocidadRequerida()
+	pedido1.cantidadPasajeros(4)
+	pedido1.coloresInc(["azul","negro"])
+	
+	assert.that(pedido1.satisfacerPedido(cachito))
+	
+	pedido1.coloresInc("rojo")
+	
+	assert.notThat(pedido1.satisfacerPedido(cachito))
+
+}
